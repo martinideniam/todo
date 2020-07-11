@@ -1,0 +1,232 @@
+/* general arrangements, variables & etc*/
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* header */
+.main-head {
+  min-height: 10vh;
+  -webkit-box-shadow: 0px 0px 5px #d9d9d9;
+          box-shadow: 0px 0px 5px #d9d9d9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.todo-form {
+  min-width: 40%;
+  margin: 0% auto 0% 3rem;
+  padding: 2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 2rem;
+}
+
+#logo-text {
+  font-size: 3rem;
+  font-family: "Dancing Script", cursive;
+  color: #305290;
+}
+
+.todo-input-and-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  background: #fafafa;
+  border: #d9d9d9 solid;
+  border-radius: 0.5rem;
+  margin-left: 2rem;
+}
+
+.todo-input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+}
+
+*:focus {
+  outline: none;
+}
+
+.todo-button {
+  border: none;
+  background: white;
+  color: #d9d9d9;
+  font-size: 2rem;
+  padding: 1.2rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.todo-button:hover {
+  background: #66ad57;
+  color: white;
+}
+
+/* to do form */
+.todo-container {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  min-height: 90vh;
+  min-width: 40%;
+  margin: 0 5% auto 0;
+}
+
+input {
+  font-family: "Playfair Display", serif;
+}
+
+.todo-item {
+  -webkit-box-shadow: 0px 0px 5px #d9d9d9;
+          box-shadow: 0px 0px 5px #d9d9d9;
+  max-width: 60rem;
+  margin: 2rem;
+  color: rgba(1, 28, 36, 0.788);
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.todo-item h2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+  padding: 0rem 2rem;
+}
+
+.todo-item button {
+  border: none;
+  background: white;
+  color: rgba(1, 28, 36, 0.788);
+  padding: 2rem 2rem;
+  font-size: 2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.todo-item button i {
+  pointer-events: none;
+}
+
+.todo-item .check:hover {
+  background: rgba(1, 36, 21, 0.788);
+  color: white;
+}
+
+.todo-item .delete:hover {
+  background: rgba(36, 1, 14, 0.788);
+  color: white;
+}
+
+/* responsiveness */
+/* for iphones & ipads*/
+@media screen and (max-width: 458px) {
+  #logo-text {
+    display: none;
+  }
+  .todo-form {
+    margin: auto;
+  }
+  .todo-input {
+    font-size: 1.8rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 20rem;
+            flex: 1 1 20rem;
+  }
+  .todo-input-and-button {
+    max-width: 40rem;
+  }
+  .todo-input-and-button {
+    margin: 1rem;
+  }
+  .todo-container {
+    margin: auto;
+  }
+}
+
+/* animations */
+@-webkit-keyframes shake {
+  25% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translate(5px);
+            transform: translate(5px);
+  }
+  75% {
+    -webkit-transform: translate(-2.5px);
+            transform: translate(-2.5px);
+  }
+  100% {
+    -webkit-transform: translate(2.5px);
+            transform: translate(2.5px);
+  }
+}
+@keyframes shake {
+  25% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translate(5px);
+            transform: translate(5px);
+  }
+  75% {
+    -webkit-transform: translate(-2.5px);
+            transform: translate(-2.5px);
+  }
+  100% {
+    -webkit-transform: translate(2.5px);
+            transform: translate(2.5px);
+  }
+}
+
+.shake {
+  -webkit-animation: shake 0.5s ease;
+          animation: shake 0.5s ease;
+}
+/*# sourceMappingURL=style.css.map */
