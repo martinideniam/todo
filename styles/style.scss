@@ -1,5 +1,17 @@
 /* general arrangements, variables & etc*/
 
+/* colors */
+
+$shadow: rgb(217, 217, 217);
+$logo: rgb(48, 82, 144);
+$background: rgb(250, 250, 250);
+$input: white;
+$todoHover: rgb(102, 173, 87);
+$text: rgba(1, 28, 36, 0.788);
+$checkB: rgba(1, 36, 21, 0.788);
+$deleteB: rgba(36, 1, 14, 0.788);
+$check: rgba(1, 28, 36, 0.3);
+
 @mixin flex($direction, $align, $justify) {
   display: flex;
   align-items: $align;
@@ -20,7 +32,7 @@ html {
 
 .main-head {
   min-height: 10vh;
-  box-shadow: 0px 0px 5px rgb(217, 217, 217);
+  box-shadow: 0px 0px 5px $shadow;
   @include flex(row, center, center);
   margin-bottom: 1rem;
 }
@@ -36,14 +48,15 @@ html {
 #logo-text {
   font-size: 3rem;
   font-family: "Dancing Script", cursive;
-  color: rgb(48, 82, 144);
+  color: $logo;
+  cursor: pointer;
 }
 
 .todo-input-and-button {
   @include flex(row, center, space-evenly);
   flex: 1 1 40rem;
-  background: rgb(250, 250, 250);
-  border: rgb(217, 217, 217) solid;
+  background: $background;
+  border: $shadow solid;
   border-radius: 0.5rem;
   margin-left: 2rem;
 }
@@ -53,7 +66,7 @@ html {
   border: none;
   padding: 1rem;
   font-size: 2rem;
-  transition: 2s ease;
+  transition: all 0.2s ease;
 }
 
 *:focus {
@@ -62,16 +75,17 @@ html {
 
 .todo-button {
   border: none;
-  background: white;
-  color: rgb(217, 217, 217);
+  background: $input;
+  color: $shadow;
   font-size: 2rem;
   padding: 1.2rem;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .todo-button:hover {
-  background: rgb(102, 173, 87);
-  color: white;
+  background: $todoHover;
+  color: $input;
 }
 
 /* to do form */
@@ -89,12 +103,13 @@ input {
 }
 
 .todo-item {
-  box-shadow: 0px 0px 5px rgb(217, 217, 217);
+  box-shadow: 0px 0px 5px $shadow;
   max-width: 60rem;
   margin: 2rem;
-  color: rgba(1, 28, 36, 0.788);
+  color: $text;
   border-radius: 0.5rem;
   @include flex(row, center, space-evenly);
+  transition: all 0.5s ease;
 
   h2 {
     flex: 1 1 40rem;
@@ -103,24 +118,24 @@ input {
 
   button {
     border: none;
-    background: white;
-    color: rgba(1, 28, 36, 0.788);
+    background: $input;
+    color: $text;
     padding: 2rem 2rem;
     font-size: 2rem;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
     cursor: pointer;
     i {
       pointer-events: none;
     }
   }
 
-  .check:hover {
-    background: rgba(1, 36, 21, 0.788);
-    color: white;
+  .checkB:hover {
+    background: $checkB;
+    color: $input;
   }
-  .delete:hover {
-    background: rgba(36, 1, 14, 0.788);
-    color: white;
+  .deleteB:hover {
+    background: $deleteB;
+    color: $input;
   }
 }
 
@@ -171,4 +186,14 @@ input {
 
 .shake {
   animation: shake 0.5s ease;
+}
+
+.delete {
+  transform: translateX(-20rem) rotateX(-180deg);
+  opacity: 0;
+}
+
+.check {
+  text-decoration: line-through;
+  color: $check;
 }

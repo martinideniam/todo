@@ -1,4 +1,5 @@
 /* general arrangements, variables & etc*/
+/* colors */
 * {
   padding: 0;
   margin: 0;
@@ -47,6 +48,7 @@ html {
   font-size: 3rem;
   font-family: "Dancing Script", cursive;
   color: #305290;
+  cursor: pointer;
 }
 
 .todo-input-and-button {
@@ -75,8 +77,8 @@ html {
   border: none;
   padding: 1rem;
   font-size: 2rem;
-  -webkit-transition: 2s ease;
-  transition: 2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 *:focus {
@@ -91,6 +93,7 @@ html {
   padding: 1.2rem;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .todo-button:hover {
@@ -127,6 +130,8 @@ input {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .todo-item h2 {
@@ -142,8 +147,8 @@ input {
   color: rgba(1, 28, 36, 0.788);
   padding: 2rem 2rem;
   font-size: 2rem;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
 
@@ -151,12 +156,12 @@ input {
   pointer-events: none;
 }
 
-.todo-item .check:hover {
+.todo-item .checkB:hover {
   background: rgba(1, 36, 21, 0.788);
   color: white;
 }
 
-.todo-item .delete:hover {
+.todo-item .deleteB:hover {
   background: rgba(36, 1, 14, 0.788);
   color: white;
 }
@@ -228,5 +233,16 @@ input {
 .shake {
   -webkit-animation: shake 0.5s ease;
           animation: shake 0.5s ease;
+}
+
+.delete {
+  -webkit-transform: translateX(-20rem) rotateX(-180deg);
+          transform: translateX(-20rem) rotateX(-180deg);
+  opacity: 0;
+}
+
+.check {
+  text-decoration: line-through;
+  color: rgba(1, 28, 36, 0.3);
 }
 /*# sourceMappingURL=style.css.map */

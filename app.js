@@ -28,10 +28,10 @@ function addTodoItem(event) {
     */
     const checkButton = document.createElement("button");
     checkButton.innerHTML = "<i class='fas fa-check'></i>";
-    checkButton.classList.add("check");
+    checkButton.classList.add("checkB");
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = "<i class='fas fa-minus'></i>";
-    deleteButton.classList.add("delete");
+    deleteButton.classList.add("deleteB");
 
     todoItem.appendChild(todoItemText);
     todoItem.appendChild(checkButton);
@@ -44,13 +44,15 @@ function addTodoItem(event) {
 
 function checkOrDelete(event) {
   console.log(event.target);
-  console.log(event.target.parentElement);
-  if (event.target.classList[0] == "check") {
-    console.log("checked");
-  } else {
-    event.target.parentElement.remove();
+  const parent = event.target.parentElement;
+  if (event.target.classList[0] == "checkB") {
+    parent.classList.toggle("check");
+  } else if (event.target.classList[0] == "deleteB") {
+    parent.classList.toggle("delete");
+    parent.addEventListener("transitionend", function () {
+      parent.remove();
+    });
   }
-  /* I have to find out to bypass i element when pressing the buttons */
 }
 
 function shake(smth) {
