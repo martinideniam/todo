@@ -12,6 +12,10 @@ html {
 }
 
 /* header */
+.mobile-logo {
+  display: none;
+}
+
 .main-head {
   min-height: 10vh;
   -webkit-box-shadow: 0px 0px 5px #d9d9d9;
@@ -26,6 +30,11 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  background: white;
+  top: 0;
+  left: 0;
 }
 
 .todo-form {
@@ -130,8 +139,8 @@ input {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .todo-item h2 {
@@ -190,6 +199,42 @@ input {
   .todo-container {
     margin: auto;
   }
+  .todo-item {
+    font-size: 1rem;
+    margin: 2rem 5rem;
+  }
+  .todo-item button {
+    font-size: 1rem;
+  }
+  .mobile-logo {
+    display: block;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+    left: 0px;
+    min-height: 10vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+  }
+  #logo-text-mobile {
+    font-size: 3rem;
+    font-family: "Dancing Script", cursive;
+    color: #305290;
+    cursor: pointer;
+    background: #d9d9d9;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    margin: 2rem 0rem;
+  }
 }
 
 /* animations */
@@ -236,13 +281,17 @@ input {
 }
 
 .delete {
-  -webkit-transform: translateX(-20rem) rotateX(-180deg);
-          transform: translateX(-20rem) rotateX(-180deg);
   opacity: 0;
 }
 
 .check {
   text-decoration: line-through;
   color: rgba(1, 28, 36, 0.3);
+}
+
+/* for night mode */
+.darkmode-layer,
+.darkmode-toggle {
+  z-index: 500;
 }
 /*# sourceMappingURL=style.css.map */

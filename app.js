@@ -2,10 +2,14 @@
 const todoContainer = document.querySelector(".todo-container");
 const todoButton = document.querySelector(".todo-button");
 const todoInput = document.querySelector(".todo-input");
+const logo = document.querySelector("#logo-text");
+const logoMobile = document.querySelector("#logo-text-mobile");
 
 /* event listeners */
 todoButton.addEventListener("click", addTodoItem);
 todoContainer.addEventListener("click", checkOrDelete);
+logo.addEventListener("click", nightMode);
+logoMobile.addEventListener("click", nightMode);
 
 /* functions */
 function addTodoItem(event) {
@@ -57,4 +61,24 @@ function checkOrDelete(event) {
 
 function shake(smth) {
   smth.childNodes[1].classList.toggle("shake");
+}
+
+/* Night mode */
+function nightMode(event) {
+  var options = {
+    bottom: "32px", // default: '32px'
+    right: "unset", // default: '32px'
+    left: "32px", // default: 'unset'
+    time: "0.5s", // default: '0.3s'
+    mixColor: "#fff", // default: '#fff'
+    backgroundColor: "#fff", // default: '#fff'
+    buttonColorDark: "#100f2c", // default: '#100f2c'
+    buttonColorLight: "#fff", // default: '#fff'
+    saveInCookies: false, // default: true,
+    label: "", // default: ''
+    autoMatchOsTheme: true, // default: true
+  };
+  const darkmode = new Darkmode(options);
+  darkmode.toggle();
+  console.log(darkmode);
 }

@@ -30,11 +30,19 @@ html {
 
 /* header */
 
+.mobile-logo {
+  display: none;
+}
+
 .main-head {
   min-height: 10vh;
   box-shadow: 0px 0px 5px $shadow;
   @include flex(row, center, center);
   margin-bottom: 1rem;
+  position: sticky;
+  background: white;
+  top: 0;
+  left: 0;
 }
 
 .todo-form {
@@ -109,7 +117,7 @@ input {
   color: $text;
   border-radius: 0.5rem;
   @include flex(row, center, space-evenly);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 
   h2 {
     flex: 1 1 40rem;
@@ -165,6 +173,34 @@ input {
   .todo-container {
     margin: auto;
   }
+
+  .todo-item {
+    font-size: 1rem;
+    margin: 2rem 5rem;
+    button {
+      font-size: 1rem;
+    }
+  }
+
+  .mobile-logo {
+    display: block;
+    position: sticky;
+    bottom: 0px;
+    left: 0px;
+    min-height: 10vh;
+    @include flex(row, center, center);
+    backdrop-filter: blur(1px);
+  }
+  #logo-text-mobile {
+    font-size: 3rem;
+    font-family: "Dancing Script", cursive;
+    color: $logo;
+    cursor: pointer;
+    background: $shadow;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    margin: 2rem 0rem;
+  }
 }
 
 /* animations */
@@ -189,11 +225,17 @@ input {
 }
 
 .delete {
-  transform: translateX(-20rem) rotateX(-180deg);
   opacity: 0;
 }
 
 .check {
   text-decoration: line-through;
   color: $check;
+}
+
+/* for night mode */
+
+.darkmode-layer,
+.darkmode-toggle {
+  z-index: 500;
 }
